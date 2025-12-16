@@ -14,9 +14,12 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use("/movies", movieRoutes);
-app.use("/auth", authRoutes);
+app.use("/api/movies", movieRoutes);
+app.use("/api/auth", authRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
 
 // MongoDB connection
 mongoose
@@ -26,7 +29,7 @@ mongoose
 
 
 // Server
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
   console.log(`Server running on port ${PORT}`)
 );

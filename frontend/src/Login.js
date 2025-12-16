@@ -6,7 +6,7 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const login = async () => {
-    const res = await axios.post("http://localhost:5000/auth/login", {
+    const res = await axios.post("https://mern-movie-backend-production.up.railway.app/api/auth/login", {
       username,
       password
     });

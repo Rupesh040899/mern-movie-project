@@ -67,7 +67,7 @@ function Home() {
 
   // Fetch movies
   const fetchMovies = async () => {
-    const res = await axios.get("http://localhost:5000/movies");
+    const res = await axios.get("https://mern-movie-backend-production.up.railway.app/api/movies");
     setMovies(res.data);
   };
 
@@ -78,7 +78,7 @@ function Home() {
       return;
     }
     const res = await axios.get(
-      `http://localhost:5000/movies/search?q=${text}`
+      `https://mern-movie-backend-production.up.railway.app/api/movies/search?q=${text}`
     );
     setMovies(res.data);
   };
@@ -87,7 +87,7 @@ function Home() {
   const sortMovies = async (type) => {
     if (!type) return;
     const res = await axios.get(
-      `http://localhost:5000/movies/sorted?by=${type}`
+      `https://mern-movie-backend-production.up.railway.app/api/movies/sorted?by=${type}`
     );
     setMovies(res.data);
   };
@@ -95,7 +95,7 @@ function Home() {
   // Add movie (Admin)
   const addMovie = async () => {
     await axios.post(
-      "http://localhost:5000/movies",
+      "https://mern-movie-backend-production.up.railway.app/api/movies",
       { title, description, rating, releaseDate, duration },
       {
         headers: {
@@ -108,7 +108,7 @@ function Home() {
 
   // Delete movie (Admin)
   const deleteMovie = async (id) => {
-    await axios.delete(`http://localhost:5000/movies/${id}`, {
+    await axios.delete(`https://mern-movie-backend-production.up.railway.app/api/movies/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
