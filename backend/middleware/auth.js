@@ -5,7 +5,7 @@ exports.verifyToken = (req, res, next) => {
   if (!token) return res.status(401).json({ msg: "No token" });
 
   try {
-    req.user = jwt.verify(token, "secret123");
+    req.user = jwt.verify(token, process.env.JWT_SECRET || "secret123");
     next();
   } catch {
     res.status(401).json({ msg: "Invalid token" });

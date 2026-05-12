@@ -1,0 +1,58 @@
+const mockMovies = [
+  {
+    _id: "1",
+    title: "Inception",
+    description: "A thief who steals corporate secrets through dream-sharing technology.",
+    rating: 8.8,
+    releaseDate: "2010-07-16",
+    duration: 148,
+    img: "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg",
+  },
+  {
+    _id: "2",
+    title: "The Dark Knight",
+    description: "Batman faces the Joker, a criminal mastermind who wants to plunge Gotham into anarchy.",
+    rating: 9.0,
+    releaseDate: "2008-07-18",
+    duration: 152,
+    img: "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg",
+  },
+  {
+    _id: "3",
+    title: "Interstellar",
+    description: "Astronauts travel through a wormhole near Saturn in search of a new home for humanity.",
+    rating: 8.6,
+    releaseDate: "2014-11-07",
+    duration: 169,
+    img: "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
+  },
+  {
+    _id: "4",
+    title: "The Matrix",
+    description: "A hacker discovers the world is a simulation and joins a rebellion against its controllers.",
+    rating: 8.7,
+    releaseDate: "1999-03-31",
+    duration: 136,
+    img: "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg",
+  },
+  {
+    _id: "5",
+    title: "Avengers: Endgame",
+    description: "The Avengers assemble once more to reverse Thanos's actions and restore balance to the universe.",
+    rating: 8.4,
+    releaseDate: "2019-04-26",
+    duration: 181,
+    img: "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_official_poster.jpg",
+  },
+  {
+    _id: "6",
+    title: "Parasite",
+    description: "A poor family schemes to become employed by a wealthy family by infiltrating their household.",
+    rating: 8.5,
+    releaseDate: "2019-05-30",
+    duration: 132,
+    img: "https://upload.wikimedia.org/wikipedia/en/5/53/Parasite_%282019_film%29.png",
+  },
+];
+
+export default mockMovies;
