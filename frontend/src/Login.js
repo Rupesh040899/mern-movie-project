@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import "./Login.css";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -45,20 +46,20 @@ function Login() {
   };
 
   return (
-    <div style={styles.page}>
-      <div style={styles.glow} />
-      <div ref={cardRef} style={styles.card}>
-        <div ref={titleRef} style={styles.header}>
-          <span style={styles.icon}>🎬</span>
-          <h2 style={styles.title}>Welcome Back</h2>
-          <p style={styles.sub}>Sign in to your CineVault account</p>
+    <div className="login-page">
+      <div className="login-glow" />
+      <div ref={cardRef} className="login-card">
+        <div ref={titleRef} className="login-header">
+          <span className="login-icon">🎬</span>
+          <h2 className="login-title">Welcome Back</h2>
+          <p className="login-sub">Sign in to your CineVault account</p>
         </div>
 
-        <div ref={formRef} style={styles.form}>
-          <div style={styles.inputGroup}>
-            <label style={styles.label}>Username</label>
+        <div ref={formRef} className="login-form">
+          <div className="input-group">
+            <label className="input-label">Username</label>
             <input
-              style={styles.input}
+              className="login-input"
               placeholder="Enter username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -68,10 +69,10 @@ function Login() {
             />
           </div>
 
-          <div style={styles.inputGroup}>
-            <label style={styles.label}>Password</label>
+          <div className="input-group">
+            <label className="input-label">Password</label>
             <input
-              style={styles.input}
+              className="login-input"
               type="password"
               placeholder="Enter password"
               value={password}
@@ -83,7 +84,8 @@ function Login() {
           </div>
 
           <button
-            style={{ ...styles.loginBtn, opacity: loading ? 0.7 : 1 }}
+            className="login-btn"
+            style={{ opacity: loading ? 0.7 : 1 }}
             onClick={login}
             disabled={loading}
             onMouseEnter={(e) => gsap.to(e.currentTarget, { scale: 1.02, duration: 0.2 })}
@@ -96,96 +98,5 @@ function Login() {
     </div>
   );
 }
-
-const styles = {
-  page: {
-    minHeight: "calc(100vh - 64px)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "40px 20px",
-    position: "relative",
-    overflow: "hidden",
-    background: "var(--bg)",
-  },
-  glow: {
-    position: "absolute",
-    top: "40%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: "500px",
-    height: "400px",
-    background: "radial-gradient(ellipse, rgba(229,9,20,0.1) 0%, transparent 70%)",
-    pointerEvents: "none",
-  },
-  card: {
-    width: "100%",
-    maxWidth: "400px",
-    background: "var(--card-bg)",
-    border: "1px solid rgba(255,255,255,0.07)",
-    borderRadius: "20px",
-    padding: "44px 40px",
-    position: "relative",
-    zIndex: 1,
-  },
-  header: {
-    textAlign: "center",
-    marginBottom: "36px",
-  },
-  icon: {
-    fontSize: "36px",
-    display: "block",
-    marginBottom: "12px",
-  },
-  title: {
-    fontFamily: "'Bebas Neue', sans-serif",
-    fontSize: "32px",
-    letterSpacing: "2px",
-    marginBottom: "8px",
-  },
-  sub: {
-    fontSize: "13px",
-    color: "var(--text-muted)",
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "20px",
-  },
-  inputGroup: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "8px",
-  },
-  label: {
-    fontSize: "12px",
-    fontWeight: 600,
-    color: "var(--text-muted)",
-    letterSpacing: "0.8px",
-    textTransform: "uppercase",
-  },
-  input: {
-    background: "var(--bg2)",
-    border: "1px solid rgba(255,255,255,0.1)",
-    borderRadius: "10px",
-    padding: "12px 16px",
-    color: "var(--text)",
-    fontSize: "14px",
-    outline: "none",
-    width: "100%",
-  },
-  loginBtn: {
-    background: "var(--accent)",
-    color: "#fff",
-    border: "none",
-    borderRadius: "10px",
-    padding: "14px",
-    fontSize: "15px",
-    fontWeight: 700,
-    letterSpacing: "0.5px",
-    marginTop: "4px",
-    cursor: "pointer",
-  },
-};
 
 export default Login;
