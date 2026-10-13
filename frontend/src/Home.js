@@ -3,7 +3,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "./Home.css";
 
-const API = "https://mern-movie-backend-production.up.railway.app/api";
+const API = "https://mern-movie-project.onrender.com/api";
 
 function MovieCard({ movie, isAdmin, deleteMovie }) {
   const cardRef = useRef(null);
