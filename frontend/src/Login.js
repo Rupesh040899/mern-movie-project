@@ -25,7 +25,7 @@ function Login() {
   const login = async () => {
     setLoading(true);
     try {
-      const res = await axios.post("https://mern-movie-backend-production.up.railway.app/api/auth/login", {
+      const res = await axios.post("https://mern-movie-project.onrender.com/api/auth/login", {
         username,
         password,
       });
